@@ -1,4 +1,4 @@
-# LuxeHotel - Luxury Hotel Management System
+# Sample LuxeHotel - Luxury Hotel Management System
 
 Welcome to LuxeHotel, a comprehensive hotel management system designed to streamline operations and enhance guest experiences.
 
@@ -45,6 +45,4 @@ We welcome contributions to LuxeHotel! Please read our contributing guidelines b
 
 This project is licensed under the MIT License - see the LICENSE file for details.
 
-## Support
 
-For support, please email support@luxehotel.com or create an issue in the repository.
