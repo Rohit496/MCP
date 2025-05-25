@@ -34,7 +34,7 @@ LuxeHotel is a modern hotel management solution that helps hotel staff manage re
 
 1. Clone the repository:
 ```bash
-git clone https://github.com/yourusername/LuxeHotel.git
+https://github.com/Salesforce-Developer9/Roomie-Agent.git
 ```
 
 ## Contributing
