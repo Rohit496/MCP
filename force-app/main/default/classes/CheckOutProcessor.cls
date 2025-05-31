@@ -19,12 +19,6 @@ public without sharing class CheckOutProcessor {
             FROM Food_Bill__c 
             WHERE Customer__r.Customer_ID__c = :customerId
         ];
-        
-        if (foodBills.isEmpty()) {
-            results.add('No food bills found for customer ID: ' + customerId);
-            return results;
-        }
-        
         // Calculate total amount
         Decimal totalAmount = 0;
         String breakdown = '';
