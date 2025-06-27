@@ -25,6 +25,12 @@
                 <default>false</default>
                 <label>Checked Out</label>
             </value>
+            <value>
+                <fullName>Cancel</fullName>
+                <default>false</default>
+                <isActive>false</isActive>
+                <label>Cancel</label>
+            </value>
         </valueSetDefinition>
     </valueSet>
 </CustomField>
