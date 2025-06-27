@@ -28,10 +28,8 @@ jobs:
           echo $SFDX_AUTH_URL > ./auth_url.txt
           sf org login sfdx-url --sfdx-url-file ./auth_url.txt --alias ci-org --set-default
 
-      - name: Deploy metadata
-        run: |
-          npx @salesforce/cli deploy metadata --manifest manifest/package.xml --target-org ci-org --wait 10 --test-level RunSpecifiedTests --tests EmployeeControllerTest
+      - name: Make deploy.sh executable
+        run: chmod +x scripts/deploy.sh
 
-      - name: Run Apex tests
-        run: |
-          npx @salesforce/cli apex run test --target-org ci-org --wait 10 --test-level RunSpecifiedTests --tests EmployeeControllerTest
+      - name: Deploy metadata using deploy.sh
+        run: scripts/deploy.sh
