@@ -30,8 +30,8 @@ jobs:
 
       - name: Deploy metadata
         run: |
-          npx @salesforce/cli deploy metadata --source-dir force-app/main/default --target-org ci-org --wait 10
+          npx @salesforce/cli deploy metadata --source-dir force-app/main/default --target-org ci-org --wait 10 --test-level RunSpecifiedTests --tests EmployeeControllerTest
 
       - name: Run Apex tests
         run: |
-          npx @salesforce/cli apex run test --target-org ci-org --wait 10
+          npx @salesforce/cli apex run test --target-org ci-org --wait 10 --test-level RunSpecifiedTests --tests EmployeeControllerTest

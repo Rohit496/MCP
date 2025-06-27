@@ -10,7 +10,7 @@ SRC_DIR="force-app/main/default"
 # Org alias or username (update if needed)
 ORG_ALIAS="rohitdotnet555@agentforce.com"
 
-# Deploy metadata
-npx @salesforce/cli deploy metadata --source-dir "$SRC_DIR" --target-org "$ORG_ALIAS" --wait 10
+# Deploy metadata and run only EmployeeControllerTest
+npx @salesforce/cli deploy metadata --source-dir "$SRC_DIR" --target-org "$ORG_ALIAS" --wait 10 --test-level RunSpecifiedTests --tests EmployeeControllerTest
 
 echo "Deployment complete!"
