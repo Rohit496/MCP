@@ -6,7 +6,7 @@ public without sharing class EmployeeController {
   public static List<EmployeeResponse> getEmployees(List<String> input) {
     List<EmployeeResponse> responses = new List<EmployeeResponse>();
 
-    // Query Employees with Id
+    // Query employees with Id
     List<Employee__c> employees = [
       SELECT Id, Name__c, Salary__c
       FROM Employee__c
