@@ -15,11 +15,11 @@ public class EmployeeControllerTest {
     List<String> input = new List<String>{ 'dummy' };
 
     // Call the method
-    Test.startTest();
+    system.Test.startTest();
     List<EmployeeController.EmployeeResponse> result = EmployeeController.getEmployees(
       input
     );
-    Test.stopTest();
+    system.Test.stopTest();
 
     // Assertions
     System.assertEquals(
