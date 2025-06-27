@@ -4,13 +4,13 @@
 # Exit on error
 set -e
 
-# Directory containing the source to deploy
-SRC_DIR="force-app/main/default"
+# Manifest file for deployment
+MANIFEST="manifest/package.xml"
 
 # Org alias or username (update if needed)
 ORG_ALIAS="rohitdotnet555@agentforce.com"
 
-# Deploy metadata and run only EmployeeControllerTest
-npx @salesforce/cli deploy metadata --source-dir "$SRC_DIR" --target-org "$ORG_ALIAS" --wait 10 --test-level RunSpecifiedTests --tests EmployeeControllerTest
+# Deploy metadata using manifest and run only EmployeeControllerTest
+npx @salesforce/cli deploy metadata --manifest "$MANIFEST" --target-org "$ORG_ALIAS" --wait 10 --test-level RunSpecifiedTests --tests EmployeeControllerTest
 
 echo "Deployment complete!"
