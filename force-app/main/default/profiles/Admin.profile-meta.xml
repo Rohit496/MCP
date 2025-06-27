@@ -14,6 +14,10 @@
         <enabled>true</enabled>
     </classAccesses>
     <classAccesses>
+        <apexClass>FoodOptionService</apexClass>
+        <enabled>true</enabled>
+    </classAccesses>
+    <classAccesses>
         <apexClass>FoodOrderAction</apexClass>
         <enabled>true</enabled>
     </classAccesses>
@@ -95,7 +99,7 @@
     <layoutAssignments>
         <layout>Food_Option__c-Food Option Layout</layout>
     </layoutAssignments>
-    
+
     <objectPermissions>
         <allowCreate>true</allowCreate>
         <allowDelete>true</allowDelete>
@@ -148,5 +152,5 @@
         <tab>Food_Option__c</tab>
         <visibility>DefaultOn</visibility>
     </tabVisibilities>
-    
+
 </Profile>

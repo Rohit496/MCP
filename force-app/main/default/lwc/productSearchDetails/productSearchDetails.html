@@ -1,0 +1,11 @@
+<template>
+  <lightning-card title="Products" icon-name="standard:product">
+    <lightning-datatable
+      data={products}
+      columns={columns}
+      hide-checkbox-column
+      key-field="productCode"
+    >
+    </lightning-datatable>
+  </lightning-card>
+</template>

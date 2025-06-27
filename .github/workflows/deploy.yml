@@ -1,0 +1,37 @@
+name: Salesforce CI/CD Deploy
+
+on:
+  push:
+    branches: [main]
+  pull_request:
+    branches: [main]
+
+jobs:
+  deploy:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v4
+
+      - name: Set up Node.js
+        uses: actions/setup-node@v4
+        with:
+          node-version: "20"
+
+      - name: Install Salesforce CLI
+        run: npm install -g @salesforce/cli
+
+      - name: Authenticate to Salesforce Org
+        env:
+          SFDX_AUTH_URL: ${{ secrets.SFDX_AUTH_URL }}
+        run: |
+          echo $SFDX_AUTH_URL > ./auth_url.txt
+          sf org login sfdx-url --sfdx-url-file ./auth_url.txt --alias ci-org --set-default
+
+      - name: Deploy metadata
+        run: |
+          npx @salesforce/cli deploy metadata --source-dir force-app/main/default --target-org ci-org --wait 10
+
+      - name: Run Apex tests
+        run: |
+          npx @salesforce/cli apex run test --target-org ci-org --wait 10

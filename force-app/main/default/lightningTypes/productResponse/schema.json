@@ -1,0 +1,5 @@
+{
+    "title": "Product Search",
+    "description": "Product Search",
+    "lightning:type": "@apexClassType/c__SearchProductController$ProductWrapper"
+}

@@ -1,0 +1,64 @@
+<template>
+  <lightning-card title="Employee Directory" icon-name="custom:custom63">
+    <!-- 🔍 Always show search input -->
+    <div class="slds-p-horizontal_medium slds-m-top_medium">
+      <lightning-input
+        type="search"
+        label="Search by Name"
+        value={searchKey}
+        onchange={handleSearch}
+        placeholder="Enter name to search..."
+      ></lightning-input>
+    </div>
+
+    <template lwc:if={hasEmployees}>
+      <div class="card-body">
+        <div class="employee-list">
+          <template for:each={visibleEmployees} for:item="emp">
+            <div key={emp.id} class="employee-card">
+              <div class="emp-info">
+                <h2>{emp.nameCustom}</h2>
+                <p>Salary: {emp.salaryFormatted}</p>
+              </div>
+              <lightning-button
+                variant="brand"
+                label="Select"
+                data-emp-id={emp.id}
+                onclick={handleSelectEmployee}
+                class="select-button"
+              ></lightning-button>
+            </div>
+          </template>
+        </div>
+
+        <!-- Pagination Controls -->
+        <div class="pagination-controls">
+          <lightning-button
+            label="Previous"
+            onclick={handlePrev}
+            disabled={isPrevDisabled}
+            variant="neutral"
+          ></lightning-button>
+
+          <div class="page-text">Page {currentPage} of {totalPages}</div>
+
+          <lightning-button
+            label="Next"
+            onclick={handleNext}
+            disabled={isNextDisabled}
+            variant="neutral"
+          ></lightning-button>
+        </div>
+      </div>
+    </template>
+
+    <!-- 👇 No results found message -->
+    <template lwc:else>
+      <div
+        class="slds-var-p-around_medium slds-text-color_weak slds-align_absolute-center"
+      >
+        No employee data available.
+      </div>
+    </template>
+  </lightning-card>
+</template>

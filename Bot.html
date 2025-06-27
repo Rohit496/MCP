@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Roomie Bot Chat Integration</title>
+</head>
+<body>
+
+  <h1>Welcome to Roomie Website</h1>
+  <p>Click the chat icon in the corner to talk to our bot!</p>
+
+  <!-- Salesforce Embedded Messaging Script -->
+  <script type='text/javascript'>
+    function initEmbeddedMessaging() {
+      try {
+        embeddedservice_bootstrap.settings.language = 'en_US'; // Set language if needed
+
+        embeddedservice_bootstrap.init(
+          '00DgK000005KJZt', // Org Id
+          'Roomie_ESD',      // Embedded Service Deployment Name
+          'https://orgfarm-8649d57452-dev-ed.develop.my.site.com/ESWRoomieESD1750172120518', // Snippet URL
+          {
+            scrt2URL: 'https://orgfarm-8649d57452-dev-ed.develop.my.salesforce-scrt.com'
+          }
+        );
+      } catch (err) {
+        console.error('Error loading Embedded Messaging: ', err);
+      }
+    };
+  </script>
+
+  <!-- Salesforce Bootstrap Loader -->
+  <script
+    type='text/javascript'
+    src='https://orgfarm-8649d57452-dev-ed.develop.my.site.com/ESWRoomieESD1750172120518/assets/js/bootstrap.min.js'
+    onload='initEmbeddedMessaging()'>
+  </script>
+
+</body>
+</html>

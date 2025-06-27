@@ -1,0 +1,5 @@
+{
+    "title": "Food Responses",
+    "description": "My Flight Response",
+    "lightning:type": "@apexClassType/c__FoodOptionService$FoodOptions"
+}
