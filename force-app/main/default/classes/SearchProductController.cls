@@ -35,7 +35,7 @@ public with sharing class SearchProductController {
     productResponse.availableProducts = listProductWraps;
     System.debug('Product Responses: ' + productResponses);
     productResponses.add(productResponse);
-    System.debug('Product Responses After Adding: ' + productResponses);
+    System.debug('Product Responses After Adding ' + productResponses);
 
     return productResponses;
   }
