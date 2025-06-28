@@ -46,7 +46,7 @@ We welcome contributions to LuxeHotel! Please read our contributing guidelines b
 
 This project is licensed under the MIT License - see the LICENSE file for details.
 
-# For All Orgs
+## For All Orgs
 
 ```
 {
@@ -68,7 +68,7 @@ This project is licensed under the MIT License - see the LICENSE file for detail
 
 ```
 
-# For Specific Org
+## For Default Org
 
 ```
 {
