@@ -9,12 +9,14 @@ LuxeHotel is a modern hotel management solution that helps hotel staff manage re
 ## Features
 
 - Room Management
+
   - Room inventory tracking
   - Room status monitoring
   - Room type categorization
   - Maintenance scheduling
 
 - Reservation System
+
   - Online booking
   - Reservation management
   - Guest information tracking
@@ -26,13 +28,12 @@ LuxeHotel is a modern hotel management solution that helps hotel staff manage re
   - Special requests handling
   - Loyalty program integration
 
-
 ## Getting Started
-
 
 ### Installation
 
 1. Clone the repository:
+
 ```bash
 https://github.com/Salesforce-Developer9/Roomie-Agent.git
 ```
@@ -45,4 +46,46 @@ We welcome contributions to LuxeHotel! Please read our contributing guidelines b
 
 This project is licensed under the MIT License - see the LICENSE file for details.
 
+# For All Orgs
 
+```
+{
+  "servers": {
+    "salesforce": {
+      "type": "stdio",
+      "command": "npx",
+      "args": [
+        "-y",
+        "@salesforce/mcp",
+        "--orgs",
+        "ALLOW_ALL_ORGS",
+        "--toolsets",
+        "all"
+      ]
+    }
+  }
+}
+
+```
+
+# For Specific Org
+
+```
+{
+  "servers": {
+    "salesforce": {
+      "type": "stdio",
+      "command": "npx",
+      "args": [
+        "-y",
+        "@salesforce/mcp",
+        "--orgs",
+        "DEFAULT_TARGET_ORG",
+        "--toolsets",
+        "all"
+      ]
+    }
+  }
+}
+
+```
